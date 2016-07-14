@@ -60,7 +60,7 @@ public class PasswordView extends EditText {
         setFilters(new InputFilter[]{new InputFilter.LengthFilter(mMaxLength)});
         setInputType(InputType.TYPE_CLASS_NUMBER);
         setCursorVisible(false);
-        setBackground(null);
+        setBackgroundColor(Color.TRANSPARENT);
     }
 
     @Override
