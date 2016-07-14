@@ -32,6 +32,10 @@ public class PasswordView extends EditText {
 
     private InputCallback mInputListener;
 
+    public PasswordView(Context context) {
+        this(context, null);
+    }
+
     public PasswordView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
