@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final PasswordView passwordInputView = (PasswordView) findViewById(R.id.passwordView);
         passwordInputView.setInputCallback(new PasswordView.InputCallback() {
             @Override
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, password, Toast.LENGTH_SHORT).show();
             }
         });
+
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
