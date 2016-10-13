@@ -7,16 +7,18 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    PasswordView mPasswordView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final PasswordView passwordInputView = (PasswordView) findViewById(R.id.passwordView);
-        passwordInputView.setInputCallback(new PasswordView.InputCallback() {
+        mPasswordView = (PasswordView) findViewById(R.id.password_view);
+        mPasswordView.setInputCallback(new PasswordView.InputCallback() {
             @Override
             public void onFinish(String password) {
+                //Do something when finish input
                 Toast.makeText(MainActivity.this, password, Toast.LENGTH_SHORT).show();
             }
         });
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, passwordInputView.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, mPasswordView.getText(), Toast.LENGTH_SHORT).show();
             }
         });
     }

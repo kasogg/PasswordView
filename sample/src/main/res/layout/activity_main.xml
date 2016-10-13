@@ -12,7 +12,7 @@
     tools:context="kasogg.com.passwordview.MainActivity">
 
     <kasogg.com.passwordview.PasswordView
-        android:id="@+id/passwordView"
+        android:id="@+id/password_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"/>
@@ -21,7 +21,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordView"
+        android:layout_below="@+id/password_view"
         android:layout_marginTop="20dp"
         android:text="button"/>
 </RelativeLayout>
