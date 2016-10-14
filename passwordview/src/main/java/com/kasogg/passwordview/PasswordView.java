@@ -1,4 +1,4 @@
-package kasogg.com.passwordview;
+package com.kasogg.passwordview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -148,7 +148,7 @@ public class PasswordView extends EditText {
         mInputListener = callback;
     }
 
-    interface InputCallback {
+    public interface InputCallback {
         void onFinish(String password);
     }
 }

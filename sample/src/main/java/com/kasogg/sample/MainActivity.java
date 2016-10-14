@@ -1,10 +1,12 @@
-package kasogg.com.passwordview;
+package com.kasogg.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.kasogg.passwordview.PasswordView;
 
 public class MainActivity extends AppCompatActivity {
     PasswordView mPasswordView;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button = (Button) findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.btn_show_password);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

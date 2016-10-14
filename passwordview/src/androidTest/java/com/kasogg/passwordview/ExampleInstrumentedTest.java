@@ -1,4 +1,4 @@
-package kasogg.com.passwordview;
+package com.kasogg.passwordview;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

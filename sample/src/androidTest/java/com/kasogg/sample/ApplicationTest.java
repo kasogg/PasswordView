@@ -1,4 +1,4 @@
-package kasogg.com.passwordview;
+package com.kasogg.sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package kasogg.com.passwordview;
+package com.kasogg.passwordview;
 
 import org.junit.Test;
 
