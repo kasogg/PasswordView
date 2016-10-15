@@ -70,7 +70,8 @@ public class PasswordView extends EditText {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mBorderRect = new RectF(0, 0, w, h);
+        float padding = mBorderWidth / 2;
+        mBorderRect = new RectF(padding, padding, w - padding, h - padding);
     }
 
     @Override
@@ -83,7 +84,7 @@ public class PasswordView extends EditText {
         canvas.drawRoundRect(mBorderRect, mBorderRadius, mBorderRadius, mBorderPaint);
 
         // Divider
-        float dividerWidth = mBorderWidth / 2;
+        float dividerWidth = mBorderWidth;
         float spaceWidth = (width - (dividerWidth * (mMaxLength + 1))) / mMaxLength;
         mBorderPaint.setStrokeWidth(dividerWidth);
         for (int i = 1; i < mMaxLength; i++) {

@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
         app:pvBorderColor="@android:color/black"
-        app:pvBorderRadius="1dp"
+        app:pvBorderRadius="2dp"
         app:pvBorderWidth="1dp"
         app:pvPasswordColor="@android:color/black"
         app:pvPasswordLength="6"
