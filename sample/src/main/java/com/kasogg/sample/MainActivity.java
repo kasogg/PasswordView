@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mPasswordView = (PasswordView) findViewById(R.id.password_view);
-        mPasswordView.setInputCallback(new PasswordView.InputCallback() {
+        mPasswordView.setInputCallback(new PasswordView.InputListener() {
             @Override
             public void onFinish(String password) {
                 //Do something when finish input

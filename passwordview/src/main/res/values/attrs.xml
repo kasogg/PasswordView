@@ -5,7 +5,7 @@
         <attr name="pvBorderWidth" format="dimension"/>
         <attr name="pvBorderRadius" format="dimension"/>
         <attr name="pvPasswordColor" format="color"/>
-        <attr name="pvPasswordRadius" format="dimension"/>
+        <attr name="pvPasswordPlaceholderRadius" format="dimension"/>
         <attr name="pvPasswordLength" format="integer"/>
     </declare-styleable>
 </resources>

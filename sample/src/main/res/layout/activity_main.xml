@@ -14,7 +14,13 @@
         android:id="@+id/password_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        app:pvBorderColor="@android:color/black"
+        app:pvBorderRadius="1dp"
+        app:pvBorderWidth="1dp"
+        app:pvPasswordColor="@android:color/black"
+        app:pvPasswordLength="6"
+        app:pvPasswordPlaceholderRadius="6dp"/>
 
     <Button
         android:id="@+id/btn_show_password"

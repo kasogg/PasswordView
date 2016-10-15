@@ -21,7 +21,7 @@ public class PasswordView extends EditText {
     private float mBorderRadius = 0;
 
     private int mPasswordColor = Color.BLACK;
-    private float mPasswordRadius = 6;
+    private float mPasswordPlaceholderRadius = 6;
 
     private int mMaxLength = 6;
 
@@ -30,7 +30,7 @@ public class PasswordView extends EditText {
     private RectF mBorderRect;
     private int mTextFilledCount;
 
-    private InputCallback mInputListener;
+    private InputListener mInputListener;
 
     public PasswordView(Context context) {
         this(context, null);
@@ -42,14 +42,14 @@ public class PasswordView extends EditText {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         mBorderWidth = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mBorderWidth, dm);
         mBorderRadius = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mBorderRadius, dm);
-        mPasswordRadius = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mPasswordRadius, dm);
+        mPasswordPlaceholderRadius = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mPasswordPlaceholderRadius, dm);
 
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.PasswordView, 0, 0);
         mBorderColor = a.getColor(R.styleable.PasswordView_pvBorderColor, mBorderColor);
         mBorderWidth = a.getDimension(R.styleable.PasswordView_pvBorderWidth, mBorderWidth);
         mBorderRadius = a.getDimension(R.styleable.PasswordView_pvBorderRadius, mBorderRadius);
         mPasswordColor = a.getColor(R.styleable.PasswordView_pvPasswordColor, mPasswordColor);
-        mPasswordRadius = a.getDimension(R.styleable.PasswordView_pvPasswordRadius, mPasswordRadius);
+        mPasswordPlaceholderRadius = a.getDimension(R.styleable.PasswordView_pvPasswordPlaceholderRadius, mPasswordPlaceholderRadius);
         mMaxLength = a.getInt(R.styleable.PasswordView_pvPasswordLength, mMaxLength);
         a.recycle();
 
@@ -96,7 +96,7 @@ public class PasswordView extends EditText {
         float cy = height / 2;
         for (int i = 0; i < mTextFilledCount; i++) {
             cx = dividerWidth + spaceWidth / 2 + (spaceWidth + dividerWidth) * i;
-            canvas.drawCircle(cx, cy, mPasswordRadius, mPasswordPaint);
+            canvas.drawCircle(cx, cy, mPasswordPlaceholderRadius, mPasswordPaint);
         }
     }
 
@@ -138,17 +138,17 @@ public class PasswordView extends EditText {
         invalidate();
     }
 
-    public void setPasswordRadius(float passwordRadius) {
-        this.mPasswordRadius = passwordRadius;
-        mPasswordPaint.setStrokeWidth(passwordRadius);
+    public void setPasswordPlaceholderRadius(float passwordPlaceholderRadius) {
+        this.mPasswordPlaceholderRadius = passwordPlaceholderRadius;
+        mPasswordPaint.setStrokeWidth(passwordPlaceholderRadius);
         invalidate();
     }
 
-    public void setInputCallback(InputCallback callback) {
-        mInputListener = callback;
+    public void setInputCallback(InputListener listener) {
+        mInputListener = listener;
     }
 
-    public interface InputCallback {
+    public interface InputListener {
         void onFinish(String password);
     }
 }
